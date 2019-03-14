@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Parcel;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +34,10 @@ import android.widget.TextView;
 
 import com.goodiser.android.app.FeedActivity;
 import com.goodiser.android.R;
+import com.google.firebase.auth.AdditionalUserInfo;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +74,10 @@ public class AuthentificationActivity extends AppCompatActivity {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
                 Intent feedIntent = new Intent(view.getContext(), FeedActivity.class);
                 startActivity(feedIntent);
 
@@ -102,8 +110,6 @@ public class AuthentificationActivity extends AppCompatActivity {
     private boolean isPasswordValid(String password) {
         return password.length() > 8;
     }
-
-
 
 
 }
